@@ -1,0 +1,35 @@
+Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of subjects: ");
+        int numSubjects = sc.nextInt();
+        
+        int totalMarks = 0;
+        
+        for(int i=1; i<=numSubjects; i++) {
+            System.out.print("Enter marks obtained in subject " + i + ": ");
+            int marks = sc.nextInt(); 
+            totalMarks += marks;
+        }
+        
+        float percentage = (totalMarks * 100) / (numSubjects * 100);
+        
+        String grade = "";
+        
+        if(percentage >= 80) {
+            grade = "A+";
+        }
+        else if(percentage >= 60) { 
+            grade = "A";
+        }
+        else if(percentage >= 50) {
+            grade = "B";
+        }
+        else {
+            grade = "C";
+        }
+        
+        System.out.println("\nTotal Marks Obtained: " + totalMarks);
+        System.out.printf("Average Percentage: %.2f%%\n", percentage);
+        System.out.println("Grade: " + grade);
+        
+        sc.close();
